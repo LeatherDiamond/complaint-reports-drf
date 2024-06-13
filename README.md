@@ -62,6 +62,9 @@ python manage.py runserver
 ```
 After completing all the steps, the project will be launched and available at `http://localhost:8000/`.
 
+> ###### NOTE:
+> Please note that template files uses links and images just for example. For your company needs you should configure template files respectively.
+
 # How to start with Docker
 
 1. Install [Docker](https://docs.docker.com/engine/install/) on your local machine, if it wasn't done yet, and launch it;
@@ -100,7 +103,7 @@ Web service provides the following enpoints:
 
 # Code formatting and quality checking tools
 > ###### **NOTE:**
-> Note, that autolaunch of code quality checking and formatting tools is already included in [Gitlab]() and [Github]() pipelines configuration files.
+> Note, that autolaunch of code quality checking and formatting tools is already included in [Gitlab](https://github.com/LeatherDiamond/complaint-reports-drf/blob/main/.gitlab-ci.yml) and [Github](https://github.com/LeatherDiamond/complaint-reports-drf/blob/main/.github/workflows/django.yml) pipelines configuration files.
 1. Run `poetry shell` to activate environment if it's not active yet;
 2. Run `black . --check` to check if the code needs to be reformatted;
 3. Run `black .` to reformat the code;
@@ -128,7 +131,7 @@ pytest
 1. Make sure that `all the points` from ***[How to start with Docker](#how-to-start-with-docker)*** section are already completed;
 2. Enter the `claim.webapp` container with the command:
 ```
-docker exe -it claim.webapp bash
+docker exec -it claim.webapp bash
 ```
 3. After you entered the container, launch tests with te command:
 ```
@@ -175,5 +178,5 @@ Experience the difference with a well-engineered application and take your custo
 
 # Licence
 
-**This project is licensed under the Apache-2.0 license - see the [LICENSE](https://github.com/LeatherDiamond/complaint-reports-drf/tree/main?tab=Apache-2.0-1-ov-file) file for details.**
+**This project is licensed under the Apache-2.0 license - see the [LICENSE](https://github.com/LeatherDiamond/complaint-reports-drf/blob/main/LICENSE) file for details.**
 
