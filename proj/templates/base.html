@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+    
+<head>
+    {% load i18n %}
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'icons/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans "Claim Report Form" %}</title>
+</head>
+
+<body>
+
+{% include 'header.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'footer.html' %}
+
+</body>
+
+</html>

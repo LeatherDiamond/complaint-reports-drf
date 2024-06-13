@@ -1,0 +1,29 @@
+version: '3.9'
+services:
+
+  webapp:
+    build:
+      args:
+        - PIP_VERSION=${WEBAPP_PIP_VERSION:-23.1.2}
+        - POETRY_VERSION=${WEBAPP_POETRY_VERSION:-1.5.1}
+        - PYTHON_VERSION=${WEBAPP_PYTHON_VERSION:-3.11}
+        - VERSION=${WEBAPP_VERSION:-dev}
+      context: .
+    container_name: claim.webapp
+    image: webapp:latest
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DEBUG_MODE: ${DEBUG_MODE}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS}
+    networks:
+      - claim
+    ports:
+      - "8000:8000"
+    volumes:
+      - .local/services/webapp:/app/:ro
+    init: true
+
+networks:
+  claim:
+    name: claim.network
+    driver: bridge

@@ -1,0 +1,24 @@
+{% load static %}
+{% load i18n %}
+<header>
+        <div class="container">
+            <a class="header-phone" href="tel:+48 22 70 35 100"><i class="bi bi-telephone-fill"></i> +48 22 70 35 100</a>
+        </div>
+        <div class="container">
+            <div class="language-switcher">
+                <form method="post" action="{% url 'set_language' %}">
+                    {% csrf_token %}
+                    <label for="language">{% trans "Language:" %}</label>
+                    <select name="language" id="language" onchange="this.form.submit()">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% for lang in LANGUAGES %}
+                            <option value="{{ lang.0 }}" data-flag="{% static 'images/lang-'|add:lang.0|add:'-logo.png' %}" {% if lang.0 == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ lang.1 }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+    </header>        

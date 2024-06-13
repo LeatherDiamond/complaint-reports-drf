@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block content %}
+<script src="{% static 'js/animation-stop.js' %}"></script>
+<script src="{% static 'js/lang-flag.js' %}"></script>
+
+<main>
+    <div class="success-header">
+        <img src="{% static 'images/logo.png' %}" alt="Company logo" class="logo">
+    </div>
+
+    <div class="animation-container">
+        <lottie-player id="success-animation" src="{% static 'animations/animation_success.json' %}" background="transparent" speed="0.8" loop></lottie-player>
+    </div>
+
+    <div class="claim-success-message">
+        <h2>{% trans "Thank you" %}</h2>
+        <h4 style="margin-top: 40px;">{% trans "Your complaint has been registered. We will send further information to the email address you provided in the form." %}</h4>
+    </div>
+
+    <div style="text-align: center;">
+    <a href="{% url 'create_claim_report' %}" type="button" class="return-button">{% trans "Return to the form" %}</a>
+    </div>
+
+    <div class="claim-success-under-button">
+        <p>{% trans "OR" %}<br>
+        {% trans "go to" %} <a href="https://github.com/LeatherDiamond">www.github.com</p>
+    </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+name: build_and_test
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4.5.0
+
+        with:
+          python-version: "3.11.3"
+
+      - name: Setup Poetry
+        uses: Gr1N/setup-poetry@v8
+        with:
+          poetry-version: '1.5.1'
+
+      - name: Install requirements
+        run: poetry install
+
+      - name: Run black
+        run: poetry run black . --check
+
+      - name: Run Flake8
+        run: poetry run flake8 .
+
+      - name: build
+        env:
+            SECRET_KEY: $${{ secrets.SECRET_KEY }}
+            DEBUG_MODE: $${{ secrets.DEBUG_MODE }}
+            ALLOWED_HOSTS: $${{ secrets.ALLOWED_HOSTS }}
+
+        run: docker-compose up -d
+            
+      - name: Run tests
+        run: docker exec claim.webapp bash run-test.sh
+
+      - name: stop services
+        run: docker-compose stop

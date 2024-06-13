@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-05 08:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\claims\forms.py:27
+msgid "Incorrect name"
+msgstr "Неправильное имя"
+
+#: .\claims\forms.py:30
+msgid "Incorrect last name"
+msgstr "Неправильная фамилия"
+
+#: .\claims\forms.py:33
+msgid "Incorrect phone number"
+msgstr "Неправильный номер телефона"
+
+#: .\claims\forms.py:36
+msgid "Incorrect email address"
+msgstr "Неверный адрес электронной почты"
+
+#: .\claims\forms.py:39
+msgid "The type of complaint has not been selected"
+msgstr "Тип жалобы не выбран"
+
+#: .\claims\forms.py:42
+msgid "Incorrect invoice number"
+msgstr "Неправильный номер счета-фактуры"
+
+#: .\claims\forms.py:45
+msgid "Incorrect product symbol"
+msgstr "Неправильный символ продукта"
+
+#: .\claims\forms.py:48
+msgid "Incorrect quantity"
+msgstr "Неправильное количество"
+
+#: .\claims\forms.py:53
+msgid "Enter company name"
+msgstr "Введите название компании"
+
+#: .\claims\forms.py:58
+msgid "Enter Tax Identification Number"
+msgstr "Введите идентификационный налоговый номер"
+
+#: .\claims\forms.py:62
+msgid "Enter Name"
+msgstr "Введите имя"
+
+#: .\claims\forms.py:65
+msgid "Enter Last Name"
+msgstr "Введите фамилию"
+
+#: .\claims\forms.py:68
+msgid "Enter Phone Number"
+msgstr "Введите номер телефона"
+
+#: .\claims\forms.py:73
+msgid "Enter E-mail Address"
+msgstr "Введите электронный адрес"
+
+#: .\claims\forms.py:80
+msgid "Enter Invoice Number"
+msgstr "Введите номер счета"
+
+#: .\claims\forms.py:86
+msgid "Enter Product Symbol"
+msgstr "Введите символ товара указанный в накладной"
+
+#: .\claims\forms.py:92
+msgid "Enter Quantity"
+msgstr "Введите количество"
+
+#: .\claims\forms.py:99
+msgid "Enter Customer Complaint Number"
+msgstr "Введите номер рекламации клиента"
+
+#: .\claims\forms.py:103
+msgid "Enter Description"
+msgstr "Введите описание"
+
+#: .\claims\models.py:9
+msgid "Company Name"
+msgstr "Название компании"
+
+#: .\claims\models.py:14
+msgid "Tax Identification Number"
+msgstr "Идентификационный налоговый номер"
+
+#: .\claims\models.py:18
+msgid "Name"
+msgstr "Имя"
+
+#: .\claims\models.py:22
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\claims\models.py:26
+msgid "Phone Number"
+msgstr "Номер телефона"
+
+#: .\claims\models.py:30
+msgid "E-mail Address"
+msgstr "Электронный адрес"
+
+#: .\claims\models.py:33
+msgid "Qualitative"
+msgstr "Качественный"
+
+#: .\claims\models.py:34
+msgid "Quantitative"
+msgstr "Количественный"
+
+#: .\claims\models.py:35
+msgid "Financial"
+msgstr "Финансовый"
+
+#: .\claims\models.py:36
+msgid "Other"
+msgstr "Другой"
+
+#: .\claims\models.py:40
+msgid "Type of Complaint"
+msgstr "Тип жалобы"
+
+#: .\claims\models.py:44
+msgid "Invoice Number"
+msgstr "Номер счета"
+
+#: .\claims\models.py:48
+msgid "Goods (symbol from the invoice)"
+msgstr "Товары (обозначение из накладной)"
+
+#: .\claims\models.py:53
+msgid "Quantity"
+msgstr "Количество"
+
+#: .\claims\models.py:58
+msgid "Customer Complaint Number"
+msgstr "Номер рекламации клиента"
+
+#: .\claims\models.py:63
+msgid "Description"
+msgstr "Описание"
+
+#: .\claims\models.py:69
+msgid "zipped attachments"
+msgstr "Архивированные вложения"
+
+#: .\claims\models.py:73
+msgid "Processed"
+msgstr "Загружено"
+
+#: .\claims\views.py:35
+msgid "You cannot upload more than 10 files."
+msgstr "Вы не можете загрузить более 10 файлов одновременно."
+
+#: .\claims\views.py:47
+msgid "Total file size should not exceed 24 MB."
+msgstr "Суммарный размер файлов не должен превышать 24 МБ."
+
+#: .\claims\views.py:63
+#, python-brace-format
+msgid ""
+"File {file_name} has an invalid extension. Valid extensions are: "
+"{extensions}."
+msgstr ""
+"Файл {file_name} имеет недопустимое расширение. Допустимые расширения: "
+"{extensions}."
+
+#: .\proj\settings.py:114
+msgid "English"
+msgstr "Английский"
+
+#: .\proj\settings.py:115
+msgid "Polish"
+msgstr "Польский"
+
+#: .\proj\settings.py:116
+msgid "Russian"
+msgstr "Русский"
+
+#: .\templates\base.html:17 .\templates\claim_report_form.html:12
+msgid "Claim Report Form"
+msgstr "Форма рекламации"
+
+#: .\templates\claim_report_form.html:90
+msgid "Attachments"
+msgstr "Вложения"
+
+#: .\templates\claim_report_form.html:101
+msgid "Submit"
+msgstr "Отправить"
+
+#: .\templates\footer.html:11
+msgid "About us"
+msgstr "О нас"
+
+#: .\templates\footer.html:13
+msgid "About the company"
+msgstr "О компании"
+
+#: .\templates\footer.html:14 .\templates\footer.html:44
+msgid "Contact"
+msgstr "Контакты"
+
+#: .\templates\footer.html:15
+msgid "Certificates"
+msgstr "Сертификаты"
+
+#: .\templates\footer.html:16
+msgid "Why our company"
+msgstr "Почему именно мы"
+
+#: .\templates\footer.html:17
+msgid "Career"
+msgstr "Карьера"
+
+#: .\templates\footer.html:18
+msgid "Awards and prizes"
+msgstr "Награды и премии"
+
+#: .\templates\footer.html:22
+msgid "Information"
+msgstr "Информация"
+
+#: .\templates\footer.html:24
+msgid "Complaints"
+msgstr "Рекламации"
+
+#: .\templates\footer.html:25
+msgid "Terms of cooperation"
+msgstr "Условия сотрудничества"
+
+#: .\templates\footer.html:26
+msgid "Delivery"
+msgstr "Доставка"
+
+#: .\templates\footer.html:27
+msgid "Payments"
+msgstr "Платежи"
+
+#: .\templates\footer.html:28
+msgid "Environmental policy"
+msgstr "Экологическая политика"
+
+#: .\templates\footer.html:29
+msgid "Technical and commercial departments"
+msgstr "Технически-коммерческие отделы"
+
+#: .\templates\footer.html:33
+msgid "Customer area"
+msgstr "Для клиента"
+
+#: .\templates\footer.html:35
+msgid "Help"
+msgstr "Помощь"
+
+#: .\templates\footer.html:36
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+#: .\templates\footer.html:37
+msgid "My account"
+msgstr "Моя учетная запись"
+
+#: .\templates\footer.html:38
+msgid "Knowledge base"
+msgstr "База знаний"
+
+#: .\templates\footer.html:58
+msgid "Awards"
+msgstr "Премии"
+
+#: .\templates\footer.html:70
+msgid "Stay up to date"
+msgstr "Оставайся в курсе событий"
+
+#: .\templates\header.html:11
+msgid "Language:"
+msgstr "Язык:"
+
+#: .\templates\rate_limit_exceeded.html:20
+msgid "Too many requests. Try again later."
+msgstr "Слишком много запросов. Попробуйте еще раз позже."
+
+#: .\templates\rate_limit_exceeded.html:24
+#: .\templates\success_claim_report.html:24
+msgid "Return to the form"
+msgstr "Вернуться к форме"
+
+#: .\templates\rate_limit_exceeded.html:28
+#: .\templates\success_claim_report.html:28
+msgid "OR"
+msgstr "ИЛИ"
+
+#: .\templates\rate_limit_exceeded.html:29
+#: .\templates\success_claim_report.html:29
+msgid "go to"
+msgstr "перейти на страницу"
+
+#: .\templates\success_claim_report.html:19
+msgid "Thank you"
+msgstr "Спасибо"
+
+#: .\templates\success_claim_report.html:20
+msgid ""
+"Your complaint has been registered. We will send further information to the "
+"email address you provided in the form."
+msgstr ""
+"Ваша рекламация зарегистрирована. Дальнейшая информация будет отправлена на "
+"почту, указанную в форме."

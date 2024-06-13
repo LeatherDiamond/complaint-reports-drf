@@ -1,0 +1,18 @@
+[flake8]
+ignore = S101, S105, S106, B101, W503, Q000, E402, JS101, JS102, VNE002
+
+max-line-length = 140
+max_cognitive_complexity = 16
+
+per-file-ignores =
+    proj/tests/conftest.py: I100
+
+exclude =
+    .artifacts
+    .git
+    .idea
+    .local
+    .venv
+    .vscode
+    */migrations/*
+    proj/manage.py

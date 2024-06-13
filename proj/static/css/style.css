@@ -1,0 +1,631 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #ffffff05;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-phone {
+	color: #232323;
+	float: left;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.header-phone i {
+    vertical-align: middle;
+    margin-bottom: -2px;
+}
+
+.language-switcher {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.language-switcher select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-size: 20px;
+    padding-left: 30px;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.language-switcher select option {
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 30px;
+}
+
+@media (max-width: 768px) {
+    .language-switcher select {
+        width: 35px;
+        padding-left: 10px;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        background-position: center center;
+    }
+
+    .language-switcher select option {
+        text-indent: 0;
+    }
+}
+
+main {
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    margin-bottom: 60px;
+    margin-top: -30px;
+}
+
+.form-header .logo {
+    display: block;
+    margin: -30px auto;
+    width: 20%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .form-header .logo {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-header .logo {
+        width: 45%;
+    }
+    .form-header h2 {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-header .logo {
+        width: 90%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    .form-header .logo {
+        width: 60%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1366px) {
+    .form-header .logo {
+        width: 40%;
+    }
+}
+
+.claim-report-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.claim-report-form .form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.claim-report-form .form-row.full-width {
+    grid-column: span 2;
+}
+
+.claim-report-form .form-row label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .claim-report-form {
+        grid-template-columns: 1fr;
+    }
+    .claim-report-form .form-row {
+        grid-column: span 2;
+    }
+}
+
+.claim-report-form .form-row input,
+.claim-report-form .form-row select,
+.claim-report-form .form-row textarea {
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.claim-report-form .form-row input:focus,
+.claim-report-form .form-row select:focus,
+.claim-report-form .form-row textarea:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.claim-report-form .form-row input:hover,
+.claim-report-form .form-row select:hover,
+.claim-report-form .form-row textarea:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.claim-report-form .attachments-input {
+    border: none;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.submit-button:hover {
+    background-color: #cc0000;
+}
+
+#file-list {
+    margin-top: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: #f9f9f9;
+}
+
+.file-item span {
+    flex-grow: 1;
+}
+
+.file-item button {
+    margin-left: 10px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-item button:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    background-color: #1d1d1d;
+    color: #fff;
+    padding-top: 50px;
+    font-family: Roboto, sans-serif;
+}
+footer .footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+    max-width: 1590px;
+}
+footer p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    position: relative;
+}
+footer ul {
+    padding-left: 0;
+}
+footer ul li {
+    list-style: none;
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 5px 0;
+}
+footer .kontakt li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.kontakt strong {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #b9b9b9;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+footer .kontakt a {
+    color: #b9b9b9;
+}
+footer a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+footer .kontakt i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #e00c16;
+}
+footer .loc {
+    color: #b9b9b9;
+}
+footer .h::before {
+    content: "";
+    position: absolute;
+    background: #e00c16;
+    width: 5px;
+    height: 34px;
+    left: -15px;
+    top: 0;
+}
+
+@media (max-width: 1024px) {
+    .kontakt strong {
+        font-size: 1rem;
+    }
+    footer ul li {
+        font-size: 0.8rem;
+    } 
+    footer .kontakt a {
+        font-size: 0.8rem;
+    }
+    footer .h {
+        font-size: 1.2rem;
+    }
+    footer a {
+        font-size: 0.8rem;
+    }
+    footer .column-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .column-container .col-md-9, 
+    .column-container .col-md-3 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .kontakt strong {
+        font-size: 0.9rem;
+    }
+    footer .kontakt a {
+        font-size: 0.75rem;
+    }
+    footer ul li {
+        font-size: 0.95rem;
+    } 
+    footer .h {
+        font-size: 1.2rem;
+    }
+    footer a {
+        font-size: 0.8rem;
+    }
+    footer .column-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .column-container .col-md-9, 
+    .column-container .col-md-3 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kontakt strong {
+        font-size: 1rem;
+    }
+    footer .kontakt a {
+        font-size: 1rem;
+    }
+    footer ul li {
+        font-size: 1rem;
+    }
+    footer .column-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .column-container .col-md-9, 
+    .column-container .col-md-3 {
+        width: 100%;
+    }
+}
+
+footer .email::before,
+footer .fax::before,
+footer .phone::before,
+footer .location::before {
+    content: "";
+    display: inline-block;
+    background-size: cover;
+    background-position: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+footer .email::before {
+    background-image: url(https://www.dacpol.eu/themes/dacpol/assets/css/img/email.png?t=52cbc869a6f69fb54203f3e1093e63a1);
+    width: 21px!important;
+    height: 21px;
+}
+footer .fax::before {
+    background-image: url(https://www.dacpol.eu/themes/dacpol/assets/css/img/icon-fax.png?t=f5904e79479964022deed01765d21285);
+    width: 21px!important;
+    height: 21px;
+}
+footer .phone::before {
+    background-image: url(https://www.dacpol.eu/themes/dacpol/assets/css/img/phone.png?t=1d37e46977f564720583e58bfd01a499);
+    width: 21px!important;
+    height: 28px;
+}
+footer .location::before {
+    background-image: url(https://www.dacpol.eu/themes/dacpol/assets/css/img/location.png?t=5cfdee1e911a8cf54180e576e0835303);
+    width: 23px!important;
+    height: 28px;
+}
+footer div img {
+    padding: 5px;
+}
+footer hr {
+    border-color: #333333;
+    margin-left: -2vw;
+    width: 104%;
+}
+footer .dolna {
+    color: #7a7a7a;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+footer .mb {
+    margin-bottom: 50px;
+}
+footer .ml {
+    margin-left: 50px;
+}
+footer .mt {
+    margin-top: 30px;
+}
+footer .border {
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #b9b9b9;
+}
+footer .bot {
+    font-size: 0.9rem;
+}
+footer .social-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+footer .social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #b9b9b9;
+    font-size: 1.5rem;
+}
+footer .social-icon:hover {
+    color: #fff;
+    border-color: #fff;
+}
+footer i {
+    font-size: 2rem;
+}
+
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.claim-success-message{
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%;
+}
+
+@media (max-width: 768px) {
+    .success-message {
+        max-width: 95%;
+    }
+}
+
+.return-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    text-decoration: none;
+}
+
+.success-header {
+    text-align: center;
+}
+
+.success-header .logo {
+    display: block;
+    margin: -30px auto;
+    width: 20%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .success-header .logo {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .success-header .logo {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .success-header .logo {
+        width: 90%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    .success-header .logo {
+        width: 60%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1366px) {
+    .success-header .logo {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .file-item span {
+        display: inline-block;
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+}
+
+.error-header {
+    text-align: center;
+}
+
+.error-header .logo {
+    display: block;
+    margin: -30px auto;
+    width: 20%;
+    max-width: 400px;
+    height: auto;
+}
+
+@media (max-width: 1024px) {
+    .error-header .logo {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .error-header .logo {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-header .logo {
+        width: 90%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    .error-header .logo {
+        width: 60%;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1366px) {
+    .error-header .logo {
+        width: 40%;
+    }
+}
+
+.claim-error-message{
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.claim-error-under-button{
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 90%;
+    margin-bottom: -20px;
+}
+
+.claim-success-under-button{
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 90%;
+    margin-bottom: -20px;
+}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<script src="{% static 'js/lang-flag.js' %}"></script>
+<script src="{% static 'js/error-animation-stop.js' %}"></script>
+
+<main>
+    <div class="error-header">
+        <img src="{% static 'images/logo.png' %}" alt="Company logo" class="logo">
+    </div>
+
+    <div class="animation-container">
+        <lottie-player id="error-animation" src="{% static 'animations/animation_error.json' %}" background="transparent" speed="0.8" loop></lottie-player>
+    </div>
+
+    <div class="claim-error-message">
+        <h4>{% trans "Too many requests. Try again later." %}</h4>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="{% url 'create_claim_report' %}" type="button" class="return-button">{% trans "Return to the form" %}</a>
+    </div>
+    
+    <div class="claim-error-under-button">
+        <p>{% trans "OR" %}<br>
+        {% trans "go to" %} <a href="https://github.com/LeatherDiamond">www.github.com</p>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block content %}
+<script src="{% static 'js/file-handler.js' %}"></script>
+<script src="{% static 'js/lang-flag.js' %}"></script>
+
+    <main>
+        <div class="form-header">
+            <img src="{% static 'images/logo.png' %}" alt="Company logo" class="logo">
+            <h2>{% trans "Claim Report Form" %}</h2>
+        </div>
+       
+        <form method="post" enctype="multipart/form-data" class="claim-report-form" id="claim-report-form">
+            {% csrf_token %}
+            <div class="form-row">
+                {{ form.company_name.label_tag }}{{ form.company_name }}
+                {% if form.company_name.errors %}
+                    <div class="error">{{ form.company_name.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.nip.label_tag }}{{ form.nip }}
+                {% if form.nip.errors %}
+                    <div class="error">{{ form.nip.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.name.label_tag }}{{ form.name }}
+                {% if form.name.errors %}
+                    <div class="error">{{ form.name.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.surname.label_tag }}{{ form.surname }}
+                {% if form.surname.errors %}
+                    <div class="error">{{ form.surname.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.tel_number.label_tag }}{{ form.tel_number }}
+                {% if form.tel_number.errors %}
+                    <div class="error">{{ form.tel_number.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.email.label_tag }}{{ form.email }}
+                {% if form.email.errors %}
+                    <div class="error">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.claim_report_type.label_tag }}{{ form.claim_report_type }}
+                {% if form.claim_report_type.errors %}
+                    <div class="error">{{ form.claim_report_type.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.invoice_number.label_tag }}{{ form.invoice_number }}
+                {% if form.invoice_number.errors %}
+                    <div class="error">{{ form.invoice_number.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.product.label_tag }}{{ form.product }}
+                {% if form.product.errors %}
+                    <div class="error">{{ form.product.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                {{ form.quantity.label_tag }}{{ form.quantity }}
+                {% if form.quantity.errors %}
+                    <div class="error">{{ form.quantity.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row full-width">
+                {{ form.claim_report_client_number.label_tag }}{{ form.claim_report_client_number }}
+                {% if form.claim_report_client_number.errors %}
+                    <div class="error">{{ form.claim_report_client_number.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row full-width">
+                {{ form.description.label_tag }}{{ form.description }}
+                {% if form.description.errors %}
+                    <div class="error">{{ form.description.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row full-width">
+                <label for="attachments">{% trans "Attachments" %}</label>
+                <input type="file" id="attachments" name="attachments" multiple>
+                <div id="file-list"></div>
+            </div>
+
+            <!-- Error Messages -->
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <div class="form-row full-width">
+                <button type="submit" class="submit-button">{% trans "Submit" %}</button>
+            </div>
+        </form>
+    </main>
+
+{% endblock %}
+    
