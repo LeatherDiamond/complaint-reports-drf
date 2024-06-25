@@ -19,10 +19,21 @@ from .serializers import ClaimReportSerializer
 
 @api_view(["GET", "POST"])
 def create_claim_report(request):
+    messages = {
+        "invalid_extension": _(
+            "File {file_name} has an invalid extension. Valid extensions are: {extensions}."
+        ),
+        "file_already_added": _("File {file_name} is already added."),
+        "max_files_exceeded": _("You cannot upload more than 10 files."),
+        "max_size_exceeded": _("Total file size should not exceed 24 MB."),
+    }
     if request.method == "GET":
         form = ClaimReportForm()
         return render(
-            request, "claim_report_form.html", {"form": form}, status=status.HTTP_200_OK
+            request,
+            "claim_report_form.html",
+            {"form": form, "messages": messages},
+            status=status.HTTP_200_OK,
         )
 
     files = request.FILES.getlist("attachments")
@@ -32,7 +43,11 @@ def create_claim_report(request):
         return render(
             request,
             "claim_report_form.html",
-            {"form": form, "error": _("You cannot upload more than 10 files.")},
+            {
+                "form": form,
+                "error": messages["max_files_exceeded"],
+                "messages": messages,
+            },
             status=status.HTTP_400_BAD_REQUEST,
         )
 
@@ -44,7 +59,7 @@ def create_claim_report(request):
             "claim_report_form.html",
             {
                 "form": form,
-                "error": _("Total file size should not exceed 24 MB."),
+                "error": messages["max_size_exceeded"],
             },
             status=status.HTTP_400_BAD_REQUEST,
         )
@@ -59,9 +74,7 @@ def create_claim_report(request):
                 "claim_report_form.html",
                 {
                     "form": form,
-                    "error": _(
-                        "File {file_name} has an invalid extension. Valid extensions are: {extensions}."
-                    ).format(
+                    "error": messages["invalid_extension"].format(
                         file_name=file.name, extensions=", ".join(allowed_extensions)
                     ),
                 },
@@ -101,7 +114,7 @@ def create_claim_report(request):
     return render(
         request,
         "claim_report_form.html",
-        {"form": form, "errors": serializer.errors},
+        {"form": form, "errors": serializer.errors, "messages": messages},
         status=status.HTTP_400_BAD_REQUEST,
     )
 

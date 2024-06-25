@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 08:09+0200\n"
+"POT-Creation-Date: 2024-06-25 15:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -168,15 +168,7 @@ msgstr "Архивированные вложения"
 msgid "Processed"
 msgstr "Загружено"
 
-#: .\claims\views.py:35
-msgid "You cannot upload more than 10 files."
-msgstr "Вы не можете загрузить более 10 файлов одновременно."
-
-#: .\claims\views.py:47
-msgid "Total file size should not exceed 24 MB."
-msgstr "Суммарный размер файлов не должен превышать 24 МБ."
-
-#: .\claims\views.py:63
+#: .\claims\views.py:24
 #, python-brace-format
 msgid ""
 "File {file_name} has an invalid extension. Valid extensions are: "
@@ -184,6 +176,19 @@ msgid ""
 msgstr ""
 "Файл {file_name} имеет недопустимое расширение. Допустимые расширения: "
 "{extensions}."
+
+#: .\claims\views.py:26
+#, python-brace-format
+msgid "File {file_name} is already added."
+msgstr "Файл {file_name} уже добавлен."
+
+#: .\claims\views.py:27
+msgid "You cannot upload more than 10 files."
+msgstr "Вы не можете загрузить более 10 файлов одновременно."
+
+#: .\claims\views.py:28
+msgid "Total file size should not exceed 24 MB."
+msgstr "Суммарный размер файлов не должен превышать 24 МБ."
 
 #: .\proj\settings.py:114
 msgid "English"
@@ -197,15 +202,19 @@ msgstr "Польский"
 msgid "Russian"
 msgstr "Русский"
 
-#: .\templates\base.html:17 .\templates\claim_report_form.html:12
+#: .\templates\base.html:17 .\templates\claim_report_form.html:13
 msgid "Claim Report Form"
 msgstr "Форма рекламации"
 
-#: .\templates\claim_report_form.html:90
+#: .\templates\claim_report_form.html:17
+msgid "mandatory field"
+msgstr "обязательное поле"
+
+#: .\templates\claim_report_form.html:95
 msgid "Attachments"
 msgstr "Вложения"
 
-#: .\templates\claim_report_form.html:101
+#: .\templates\claim_report_form.html:112
 msgid "Submit"
 msgstr "Отправить"
 

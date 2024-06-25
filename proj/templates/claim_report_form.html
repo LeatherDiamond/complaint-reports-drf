@@ -3,16 +3,20 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-<script src="{% static 'js/file-handler.js' %}"></script>
 <script src="{% static 'js/lang-flag.js' %}"></script>
 <script src="{% static 'js/form-fields-animation.js' %}"></script>
+<script src="{% static 'js/attachments-validation.js' %}"></script>
 
     <main>
         <div class="form-header">
             <img src="{% static 'images/logo.png' %}" alt="Company logo" class="logo">
             <h2>{% trans "Claim Report Form" %}</h2>
         </div>
-       
+
+        <div class="form-row mandatory-field-description">
+            * - {% trans "mandatory field" %}
+        </div>
+
         <form method="post" enctype="multipart/form-data" class="claim-report-form" id="claim-report-form">
             {% csrf_token %}
             <div class="form-row">
@@ -94,9 +98,15 @@
             </div>
 
             <!-- Error Messages -->
-            {% if error %}
-                <p class="error">{{ error }}</p>
-            {% endif %}
+            <div class="form-row full-width">
+                {% if error %}
+                <div class="attachment-error-container">
+                    <p class="attachment-error">{{ error }}</p>
+                </div>
+                {% else %}
+                    <div class="attachment-error-container"></div>
+                {% endif %}
+            </div>
 
             <div class="form-row full-width">
                 <button type="submit" class="submit-button">{% trans "Submit" %}</button>
@@ -104,5 +114,13 @@
         </form>
     </main>
 
+    <script type="text/javascript">
+        var messages = {
+            invalid_extension: "{{ messages.invalid_extension }}",
+            file_already_added: "{{ messages.file_already_added }}",
+            max_files_exceeded: "{{ messages.max_files_exceeded }}",
+            max_size_exceeded: "{{ messages.max_size_exceeded }}"
+        };
+    </script>
 {% endblock %}
     
